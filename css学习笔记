@@ -1,0 +1,31 @@
+1. padding和margin的简写方式 顺序是按照顺时针来的
+2. css子选择器的使用注意事项：
+	1. 使用子选择器，会增加css选择符的权重，css选择符的权重越高，样式越不容易被覆盖，越容易对其他选择符产生影响。
+	2. 除非是html结构非常稳定，尽量不要使用子选择器
+	3. 为了保证样式容易被覆盖，提高可维护性，css选择符需要保证权重尽可能低
+
+3. css sprite 是否需要取决于 对服务器的负荷是否有要求，减少http请求
+4. css编写风格：一行式（目前采用的风格）
+5. css hack
+	1. ie注释法：
+		
+			<!--[if lte IE 9]>
+		        假如版本小于 ie9，则xxx
+		    <![endif]-->
+	2. 标签前缀： `*html`
+	3. 属性前缀：`_width`
+6. a标签的四种状态的顺序：l(link) ov(visited)e h(hover)a(active)te
+7. `inline`元素设置了`float`或者`position:absolute`属性后，会隐式地激活`inline-block`属性，既可以设置长宽
+8. **居中**
+	1. 水平居中
+		1. 文本，图片等行内元素的居中：父级元素设置`text-align:center`
+		2. 确定宽度的块级元素居中：利用`margin:0 auto`来进行居中
+		3. **不确定宽度的块级元素居中**:我比较常用的方法是设置成`inline-block`，然后父元素设置`text-align:center`
+	2. 垂直居中
+		1. 父元素高度不确定的文本，图片，块级元素的垂直居中
+			1. 给父元素设置上下相同的`padding`
+			2.
+		2. 父元素高度确定的单行文本：设置`line-height`为父元素的高度
+		3. 父元素高度确定的多行文本，图片和块级元素居中
+			1. 父级元素设置为`display:table-cell;vertical-align:middle`
+			2. 使用`position:absolute;top:50%;margin-top:-height`(height为文本，图片和块级元素的高度)
